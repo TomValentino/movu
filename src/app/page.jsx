@@ -8,7 +8,7 @@ import { Suspense } from 'react';
 // ─── PAGE EXPORT ──────────────────────────────────────────────────────────────
 export default function StorePage() {
   return (
-    <>
+    <div style={{scrollBehavior: 'smooth'}}>
       {/* <Nav /> */}
       <Hero />
       <ProofStrip />
@@ -17,7 +17,7 @@ export default function StorePage() {
   <HomePageProducts />
 </Suspense>
       <MoreProof />
-    </>
+    </div>
   );
 }
 
