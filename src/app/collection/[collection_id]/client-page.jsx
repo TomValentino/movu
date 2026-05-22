@@ -128,18 +128,22 @@ export function CollectionTopBar({ updateSort }) {
   )
 }
 
-/* ── Category Tiles ── */
 export function CollectionTiles() {
   const activeId = shopifyState.use('activeId')
 
-  const orderedCategories = [
-    ...CATEGORIES.filter(cat => cat.id === activeId),
-    ...CATEGORIES.filter(cat => cat.id !== activeId),
-  ]
+  const isMobile =
+    typeof window !== "undefined" && window.innerWidth <= 768
+
+  const categories = isMobile
+    ? [
+        ...CATEGORIES.filter(c => c.id === activeId),
+        ...CATEGORIES.filter(c => c.id !== activeId),
+      ]
+    : CATEGORIES
 
   return (
     <div className="col-tiles">
-      {orderedCategories.map((cat) => (
+      {categories.map((cat) => (
         <div
           key={cat.id}
           className={`col-tile${cat.id === activeId ? " col-tile--active" : ""}`}
@@ -148,7 +152,6 @@ export function CollectionTiles() {
             href={`/collection/${cat.id}`}
             className="col-tile__img-wrap"
             scroll={false}
-            style={{ cursor: 'pointer' }}
           >
             <Image
               src={cat.img}
