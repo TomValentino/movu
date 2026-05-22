@@ -125,7 +125,7 @@ export function Collections() {
     { name: 'Intimates',   url: "/collection/488967012598", count: '9 pieces',   img: '/influencer-3.png' },
     { name: 'Bodysuits',   url: "/collection/488967045366", count: '9 pieces',   img: 'https://cdn.shopify.com/s/files/1/0772/8241/0742/collections/7DC7502D-8C43-4EE0-81ED-A420DDA31FCC.jpg?v=1778843404' },
     { name: 'Bustiers',    url: "/collection/488967110902", count: '9 pieces',   img: '/influencer-2.png' },
-    { name: 'Pajamas',     url: "/collection/488967143670", count: '9 pieces',   img: '/influencer-2.png' },
+    { name: 'Pajamas',     url: "/collection/488865530102", count: '9 pieces',   img: '/influencer-2.png' },
   ];
 
   return (

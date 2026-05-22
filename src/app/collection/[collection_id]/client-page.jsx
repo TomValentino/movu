@@ -17,13 +17,13 @@ const COLORS = [
 ]
 
 const CATEGORIES = [
-  { id: "488234778870", label: "All Items",  img: "/influencer-2.png" },
-  { id: "488967012598", label: "Lingerie",   img: "/influencer-2.png" },
-  { id: "488966979830", label: "Sleepwear",  img: "/influencer-2.png" },
-  { id: "488865530102", label: "Pajamas",    img: "/influencer-1.png" },
-  { id: "488967045366", label: "Bodysuits",  img: "/influencer-1.png" },
-  { id: "488967110902", label: "Bustiers",   img: "/influencer-3.png" },
-  { id: "488967078134", label: "Swimwear",   img: "/influencer-2.png" },
+  { id: "488234778870", label: "All Items",  img: "/influencer-3.png" },
+  { id: "488967012598", label: "Lingerie",   img: "https://cdn.shopify.com/s/files/1/0772/8241/0742/collections/7DC7502D-8C43-4EE0-81ED-A420DDA31FCC.jpg?v=1778843404" },
+  { id: "488966979830", label: "Sleepwear",  img: "/influencer-1.png" },
+  { id: "488865530102", label: "Pajamas",    img: "https://cdn.shopify.com/s/files/1/0772/8241/0742/collections/IMG-1295.jpg?v=1779016835" },
+  { id: "488967045366", label: "Bodysuits",  img: "/influencer-3.png" },
+  { id: "488967110902", label: "Bustiers",   img: "/influencer-2.png" },
+  { id: "488967078134", label: "Swimwear",   img: "https://cdn.shopify.com/s/files/1/0772/8241/0742/collections/7DC7502D-8C43-4EE0-81ED-A420DDA31FCC.jpg?v=1778843404" },
 ]
 
 /* ── Collection Hero ── */
