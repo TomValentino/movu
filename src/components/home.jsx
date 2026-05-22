@@ -32,7 +32,7 @@ export function Hero() {
         </p>
         <div className="hero-ctas">
           <a href="#collections" className="btn-primary">Explore Garments</a>
-          <a href="/collection/488234778870" className="hero-btn btn-ghost">Browse pieces</a>
+          <a href="/collection/488234778870" className="hero-btn">Browse pieces</a>
         </div>
         <div className="hero-scroll-hint">
           <span className="scroll-line" />
