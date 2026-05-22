@@ -159,6 +159,8 @@ export function formatPrice(amount, currencyCode = "IDR") {
 }
 
 export default function ProductPage({ product, similarProducts, similarProductCollectionId}) {
+
+  const isAdding = cartState.use('isAdding')
   const colorOption = product.options.find(o => o.name === "Color");
   const sizeOption  = product.options.find(o => o.name === "Size");
 
@@ -338,10 +340,11 @@ export default function ProductPage({ product, similarProducts, similarProductCo
               <button
                 className="btn-atc"
                 onClick={handleAddToCart}
-                disabled={isSoldOut}
+                disabled={isSoldOut || isAdding}
               >
-                {isSoldOut ? "Sold Out" : "Add to Cart"}
+                {isSoldOut ? "Sold Out" : isAdding ? "Adding..." : "Add to Cart"}
               </button>
+
               <button className="btn-wishlist">
                 <HeartIcon /> Save to Wishlist
               </button>

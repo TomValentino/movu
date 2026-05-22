@@ -75,6 +75,7 @@ export const cartState = createCustomState(
     // Add a product (or increase qty if exists)
     addCartItem: async ({ get, set }, product, variant, qty = 1) => {
       console.log(variant)
+      set('isAdding', true)
       if (!product || !variant) return
 
       trackAddToCart(product.price, qty)
@@ -121,6 +122,9 @@ export const cartState = createCustomState(
             : i
         )
         set('items', patched)
+        set('isOpen', true)
+        set('isAdding', false)
+
 
         return
       }
@@ -131,6 +135,7 @@ export const cartState = createCustomState(
         set('items', prevItems)
         set('count', prevCount)
         set('total', prevTotal)
+        set('isAdding', false)
         return null
       }
     },
