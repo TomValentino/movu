@@ -15,25 +15,25 @@ const MEGA_CATEGORIES = [
   {
     label: "Sleepwear",
     tag: "New Season",
-    href: "#",
+    href: "/collection/488966979830",
     img: "/influencer-2.png",
   },
   {
     label: "Intimates",
     tag: "SS 2025",
-    href: "#",
+    href: "/collection/488967012598",
     img: "/influencer-1.png",
   },
   {
-    label: "Robes",
+    label: "Pajamas",
     tag: "Bestsellers",
-    href: "#",
+    href: "/collection/488865530102",
     img: "/influencer-3.png",
   },
   {
-    label: "Gifting",
+    label: "Bustiers",
     tag: "Curated",
-    href: "#",
+    href: "/collection/488967110902",
     img: "/influencer-2.png",
   },
 ];
