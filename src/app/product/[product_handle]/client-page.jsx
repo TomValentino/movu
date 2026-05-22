@@ -219,7 +219,7 @@ export default function ProductPage({ product, similarProducts, similarProductCo
         <span className="breadcrumb-sep">—</span>
         {product.collections?.[0] && (
           <>
-            <a href={`/collections/488234778870}`}>
+            <a href={`/collection/${product.collections[0].id.split('/').pop()}`}>
               {product.collections[0].title}
             </a>
             <span className="breadcrumb-sep">—</span>
