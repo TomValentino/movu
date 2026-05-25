@@ -1,9 +1,9 @@
 
 import { Syne, Manrope } from "next/font/google";
 import "@/styles/globals.css";
-import SetupFacebookPixel from "@/facebook/fb-client";
 import { Suspense } from "react";
 import { StoreFooter, StoreNav } from "./components";
+import FacebookPixel from "@/facebook/fb-client";
 
 
 export const metadata = {
@@ -27,11 +27,11 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${syne.variable} ${manrope.variable}`}>
       <body>
-        {/* <SliderCart/> */}
+
+        <FacebookPixel />
 
         <Suspense fallback={null}>
 
-        <SetupFacebookPixel />
         </Suspense>
         
         <div style={{ margin: 0, minHeight: '100dvh', display: 'flex', flexDirection: 'column', background: '#F8F5F1' }}>

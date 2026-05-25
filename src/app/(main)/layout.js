@@ -3,8 +3,7 @@ import { Syne, Manrope } from "next/font/google";
 import "@/styles/globals.css";
 import SeraNav from "@/components/nav-bar";
 import { SetupCart } from "../../cart/cart-provider";
-import SetupFacebookPixel from "@/facebook/fb-client";
-import { Suspense } from "react";
+import FacebookPixel from "@/facebook/fb-client";
 
 
 export const metadata = {
@@ -28,14 +27,12 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${syne.variable} ${manrope.variable}`}>
       <body>
-        {/* <SliderCart/> */}
+                <FacebookPixel />
+        
 
         <SetupCart />
-        <Suspense fallback={null}>
 
-        <SetupFacebookPixel />
-        </Suspense>
-        
+
         <SeraNav />
         
         {children}
@@ -88,6 +85,7 @@ export default function RootLayout({ children }) {
       </div>
          </div>
     </footer>
+
         </body>
     </html>
   );

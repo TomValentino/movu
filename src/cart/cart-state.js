@@ -78,7 +78,11 @@ export const cartState = createCustomState(
       set('isAdding', true)
       if (!product || !variant) return
 
-      trackAddToCart(product.price, qty)
+        trackAddToCart({
+    value: variant.price ?? product.price,
+    contentId: variant.id,
+    quantity: qty,
+  })
 
       // ---------- SNAPSHOT FOR ROLLBACK ----------
       const prevItems = get('items') || []
