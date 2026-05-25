@@ -71,7 +71,7 @@ export default function SeraNavbar() {
               <MenuIcon open={menuOpen} />
             </button>
             <a href="/" className="sera-nav__logo" aria-label="Séra home" onClick={close}>
-              SÈRA
+              LUMÈRA
             </a>
           </div>
 
