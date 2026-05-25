@@ -642,7 +642,7 @@ body {
     cursor: pointer;
   }
   @media (max-width: 900px) {
-    .sticky-atc { display: flex; }
+    .sticky-atc { display: flex; padding-right: 80px }
     /* Offset so content isn't hidden by sticky bar */
     .content-col { padding-bottom: 80px; }
   }

@@ -133,12 +133,12 @@ export default function SeraNavbar() {
                 <InstagramIcon />
               </div>
               <div className="sera-mega__ig-text">
-                <span className="sera-mega__ig-handle">@seratheLabel</span>
+                <span className="sera-mega__ig-handle">@lumera.pajamas</span>
                 <span className="sera-mega__ig-sub">Follow us on Instagram</span>
               </div>
             </div>
             <a
-              href="https://instagram.com/seratheLabel"
+              href="https://www.instagram.com/lumera.pajamas/"
               target="_blank"
               rel="noopener noreferrer"
               className="sera-mega__ig-btn"

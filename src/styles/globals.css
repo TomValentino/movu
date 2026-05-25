@@ -100,6 +100,74 @@ button {
     overflow-x: hidden;
   }
 
+
+
+
+   .wa-btn {
+  position: fixed;
+  bottom: var(--sp-4);
+  right: var(--sp-4);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+  @media (max-width: 900px) {
+    .wa-btn { right: 10px; bottom: 10px; }
+ 
+  }
+
+
+.wa-label {
+  font-family: var(--font-body);
+  font-size: var(--fs-xs);
+  letter-spacing: var(--ls-wider);
+  text-transform: uppercase;
+  color: var(--c-ink-mid);
+  background: var(--c-white);
+  border: 1px solid var(--c-border-mid);
+  padding: var(--sp-2) var(--sp-4);
+  white-space: nowrap;
+  opacity: 0;
+  transform: translateX(6px);
+  transition: opacity var(--dur-mid) var(--ease-expo), transform var(--dur-mid) var(--ease-expo);
+  pointer-events: none;
+}
+
+.wa-btn:hover .wa-label,
+.wa-btn:focus-visible .wa-label {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.wa-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: var(--c-bg-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: background var(--dur-fast) var(--ease-smooth), transform var(--dur-fast) var(--ease-smooth);
+  box-shadow: 0 4px 24px rgba(26,22,20,0.18);
+}
+
+.wa-btn:hover .wa-icon,
+.wa-btn:focus-visible .wa-icon {
+  background: var(--c-accent);
+  transform: scale(1.07);
+}
+
+.wa-icon svg {
+  width: 24px;
+  height: 24px;
+}
+
+
   /* ── NAV ── */
   .nav.global {position: sticky;}
   .nav {

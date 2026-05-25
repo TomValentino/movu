@@ -21,7 +21,7 @@ export function Hero() {
   return (
     <section className="hero">
       <div className="hero-left">
-        <p className="hero-eyebrow">New Season — SS 2025</p>
+        <p className="hero-eyebrow">New Season — SS 2026</p>
         <h1 className="hero-heading">
           Worn for<br />
           the quiet<br />

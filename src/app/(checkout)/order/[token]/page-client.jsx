@@ -439,61 +439,7 @@ const isPaid = order.displayFinancialStatus === 'PAID'
                 <div className="or-qr-wrap">
                   {/* Replace src with real QRIS image URL when available */}
                   {/* <img src="/your-qr-code.png" alt="QRIS payment code" /> */}
-                  <div className="or-qr-placeholder">
-                    <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <rect x="5" y="5" width="35" height="35" rx="4" fill="#1A1614"/>
-                      <rect x="12" y="12" width="21" height="21" rx="2" fill="#F8F5F1"/>
-                      <rect x="17" y="17" width="11" height="11" rx="1" fill="#1A1614"/>
-                      <rect x="60" y="5" width="35" height="35" rx="4" fill="#1A1614"/>
-                      <rect x="67" y="12" width="21" height="21" rx="2" fill="#F8F5F1"/>
-                      <rect x="72" y="17" width="11" height="11" rx="1" fill="#1A1614"/>
-                      <rect x="5" y="60" width="35" height="35" rx="4" fill="#1A1614"/>
-                      <rect x="12" y="67" width="21" height="21" rx="2" fill="#F8F5F1"/>
-                      <rect x="17" y="72" width="11" height="11" rx="1" fill="#1A1614"/>
-                      <rect x="45" y="5" width="8" height="8" rx="1" fill="#1A1614"/>
-                      <rect x="55" y="5" width="3" height="8" rx="1" fill="#1A1614"/>
-                      <rect x="45" y="15" width="3" height="8" rx="1" fill="#1A1614"/>
-                      <rect x="50" y="15" width="8" height="3" rx="1" fill="#1A1614"/>
-                      <rect x="45" y="25" width="8" height="8" rx="1" fill="#1A1614"/>
-                      <rect x="55" y="25" width="8" height="3" rx="1" fill="#1A1614"/>
-                      <rect x="60" y="45" width="8" height="8" rx="1" fill="#1A1614"/>
-                      <rect x="70" y="45" width="8" height="3" rx="1" fill="#1A1614"/>
-                      <rect x="80" y="45" width="15" height="8" rx="1" fill="#1A1614"/>
-                      <rect x="60" y="55" width="3" height="8" rx="1" fill="#1A1614"/>
-                      <rect x="65" y="58" width="8" height="5" rx="1" fill="#1A1614"/>
-                      <rect x="75" y="55" width="8" height="8" rx="1" fill="#1A1614"/>
-                      <rect x="85" y="55" width="10" height="3" rx="1" fill="#1A1614"/>
-                      <rect x="60" y="65" width="15" height="8" rx="1" fill="#1A1614"/>
-                      <rect x="78" y="65" width="17" height="3" rx="1" fill="#1A1614"/>
-                      <rect x="60" y="75" width="5" height="20" rx="1" fill="#1A1614"/>
-                      <rect x="67" y="78" width="8" height="5" rx="1" fill="#1A1614"/>
-                      <rect x="77" y="75" width="8" height="12" rx="1" fill="#1A1614"/>
-                      <rect x="87" y="70" width="8" height="8" rx="1" fill="#1A1614"/>
-                      <rect x="87" y="80" width="8" height="15" rx="1" fill="#1A1614"/>
-                      <rect x="5" y="45" width="8" height="8" rx="1" fill="#1A1614"/>
-                      <rect x="15" y="45" width="3" height="3" rx="1" fill="#1A1614"/>
-                      <rect x="20" y="45" width="8" height="8" rx="1" fill="#1A1614"/>
-                      <rect x="30" y="45" width="8" height="3" rx="1" fill="#1A1614"/>
-                      <rect x="5" y="55" width="13" height="3" rx="1" fill="#1A1614"/>
-                      <rect x="20" y="55" width="5" height="8" rx="1" fill="#1A1614"/>
-                      <rect x="27" y="57" width="8" height="6" rx="1" fill="#1A1614"/>
-                      <rect x="37" y="55" width="5" height="8" rx="1" fill="#1A1614"/>
-                      <rect x="5" y="62" width="8" height="8" rx="1" fill="#1A1614"/>
-                      <rect x="15" y="62" width="3" height="13" rx="1" fill="#1A1614"/>
-                      <rect x="20" y="65" width="8" height="8" rx="1" fill="#1A1614"/>
-                      <rect x="30" y="62" width="12" height="5" rx="1" fill="#1A1614"/>
-                      <rect x="30" y="69" width="5" height="6" rx="1" fill="#1A1614"/>
-                      <rect x="37" y="65" width="5" height="10" rx="1" fill="#1A1614"/>
-                      <rect x="5" y="72" width="8" height="8" rx="1" fill="#1A1614"/>
-                      <rect x="15" y="77" width="3" height="8" rx="1" fill="#1A1614"/>
-                      <rect x="20" y="75" width="8" height="3" rx="1" fill="#1A1614"/>
-                      <rect x="20" y="80" width="5" height="5" rx="1" fill="#1A1614"/>
-                      <rect x="27" y="77" width="8" height="8" rx="1" fill="#1A1614"/>
-                      <rect x="37" y="77" width="5" height="8" rx="1" fill="#1A1614"/>
-                      <rect x="5" y="82" width="8" height="13" rx="1" fill="#1A1614"/>
-                      <rect x="27" y="87" width="8" height="8" rx="1" fill="#1A1614"/>
-                    </svg>
-                  </div>
+             
                 </div>
                 <p className="or-qr-hint">
                   Scan with your banking app
