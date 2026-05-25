@@ -42,7 +42,7 @@ export default function RootLayout({ children }) {
      
       <div className="footer-top">
         <div>
-          <div className="footer-brand-name">Sèra</div>
+          <div className="footer-brand-name">Lumèra</div>
           <p className="footer-brand-desc">
             Luxury sleepwear and intimates. Crafted for comfort, designed for the woman who knows the difference.
           </p>
@@ -80,7 +80,7 @@ export default function RootLayout({ children }) {
         </div>
       </div>
       <div className="footer-bottom">
-        <p className="footer-legal">© 2025 Sèra. All rights reserved.</p>
+        <p className="footer-legal">© 2026 Lumèra. All rights reserved.</p>
         <p className="footer-made">Designed in Indonesia</p>
       </div>
          </div>
