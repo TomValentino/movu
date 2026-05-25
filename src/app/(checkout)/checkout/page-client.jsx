@@ -4,6 +4,7 @@ import { useState, useEffect, useRef } from 'react'
 import { useRouter } from 'next/navigation'
 import { createUnpaidOrder } from '@/shopify/admin'
 import { clearShopifyCart } from '@/shopify/fetches'
+import { trackAddPaymentInfo } from '@/facebook/fb-client'
 
 const fmtRp = (n) => 'Rp\u00a0' + Math.round(n).toLocaleString('id-ID')
 
@@ -36,35 +37,51 @@ export default function CheckoutClient({ cartId, cart }) {
   }, [cartOpen])
 
   async function handleOrder(e) {
-    e.preventDefault()
-    setError(null)
-    if (!cartId) return setError('No active cart found.')
-    if (!lines.length) return setError('Your cart is empty.')
-    setLoading(true)
-    const fd = new FormData(e.target)
-    try {
-      const { token } = await createUnpaidOrder(
-        {
-          email:       fd.get('email'),
-          firstName:   fd.get('firstName'),
-          lastName:    fd.get('lastName'),
-          phone:       fd.get('phone'),
-          address1:    fd.get('address1'),
-          city:        fd.get('city'),
-          province:    fd.get('province'),
-          zip:         fd.get('zip'),
-          countryCode: 'ID',
-        },
-        lines.map(l => ({ variantId: l.merchandise.id, quantity: l.quantity }))
-      )
-      await clearShopifyCart(cartId, lines.map(l => l.id))
-      setDone(true)
-      setTimeout(() => router.push(`/order/${token}`), 400)
-    } catch (err) {
-      setError(err.message)
-      setLoading(false)
-    }
+  e.preventDefault()
+  setError(null)
+  if (!cartId) return setError('No active cart found.')
+  if (!lines.length) return setError('Your cart is empty.')
+  setLoading(true)
+  const fd = new FormData(e.target)
+  try {
+    const { token } = await createUnpaidOrder(
+      {
+        email:       fd.get('email'),
+        firstName:   fd.get('firstName'),
+        lastName:    fd.get('lastName'),
+        phone:       fd.get('phone'),
+        address1:    fd.get('address1'),
+        city:        fd.get('city'),
+        province:    fd.get('province'),
+        zip:         fd.get('zip'),
+        countryCode: 'ID',
+      },
+      lines.map(l => ({ variantId: l.merchandise.id, quantity: l.quantity }))
+    )
+
+    trackAddPaymentInfo({
+      value: subtotal,
+      contents: lines.map(l => ({ id: l.merchandise.id, quantity: l.quantity })),
+      userData: {
+        email:      fd.get('email'),
+        firstName:  fd.get('firstName'),
+        lastName:   fd.get('lastName'),
+        phone:      fd.get('phone'),
+        city:       fd.get('city'),
+        zip:        fd.get('zip'),
+        state:      fd.get('province'),
+        country:    'id',
+      }
+    })
+
+    await clearShopifyCart(cartId, lines.map(l => l.id))
+    setDone(true)
+    setTimeout(() => router.push(`/order/${token}`), 400)
+  } catch (err) {
+    setError(err.message)
+    setLoading(false)
   }
+}
 
   return (
     <>

@@ -106,14 +106,15 @@ async function fireEvent(eventName, customData = {}, userData = {}) {
 
 export const trackPageView = () =>
   fireEvent('PageView', {});
-
-export const trackViewContent = ({ value, currency = DEFAULT_CURRENCY, contentId }) =>
-  fireEvent('ViewContent', {
+export const trackViewContent = ({ value, currency = DEFAULT_CURRENCY, contentId }) => {
+  console.log('[FB] ViewContent', { value, currency, contentId })
+  return fireEvent('ViewContent', {
     value,
     currency,
     content_ids: [String(contentId)],
     content_type: 'product',
-  });
+  })
+}
 
 export const trackAddToCart = ({ value, currency = DEFAULT_CURRENCY, contentId, quantity = 1 }) =>
   fireEvent('AddToCart', {
@@ -125,31 +126,34 @@ export const trackAddToCart = ({ value, currency = DEFAULT_CURRENCY, contentId, 
     contents: [{ id: String(contentId), quantity }],
   });
 
-export const trackInitiateCheckout = ({ value, currency = DEFAULT_CURRENCY, contents = [], numItems }) =>
-  fireEvent('InitiateCheckout', {
+export const trackInitiateCheckout = ({ value, currency = DEFAULT_CURRENCY, contents = [], numItems }) => {
+  console.log('[FB] InitiateCheckout', { value, currency, contents, numItems })
+  return fireEvent('InitiateCheckout', {
     value,
     currency,
     content_ids: contents.map((c) => String(c.id)),
     contents: contents.map((c) => ({ id: String(c.id), quantity: c.quantity })),
     content_type: 'product',
     num_items: numItems ?? contents.reduce((s, c) => s + c.quantity, 0),
-  });
-
-export const trackAddPaymentInfo = ({ value, currency = DEFAULT_CURRENCY, contents = [] }) =>
-  fireEvent('AddPaymentInfo', {
+  })
+}
+export const trackAddPaymentInfo = ({ value, currency = DEFAULT_CURRENCY, contents = [], userData = {} }) => {
+  console.log('[FB] AddPaymentInfo', { value, currency, contents, userData })
+  return fireEvent('AddPaymentInfo', {
     value,
     currency,
     content_ids: contents.map((c) => String(c.id)),
     contents: contents.map((c) => ({ id: String(c.id), quantity: c.quantity })),
     content_type: 'product',
-  });
-
+  }, userData)
+}
 /**
  * trackPurchase — call on your thank-you page after order is confirmed.
  * Pass as much userData as you have for best Event Match Quality.
  */
-export const trackPurchase = ({ orderId, value, currency = DEFAULT_CURRENCY, contents = [], userData = {} }) =>
-  fireEvent(
+export const trackPurchase = ({ orderId, value, currency = DEFAULT_CURRENCY, contents = [], userData = {} }) => {
+  console.log('[FB] Purchase', { orderId, value, currency, contents, userData })
+  return fireEvent(
     'Purchase',
     {
       value,
@@ -161,8 +165,8 @@ export const trackPurchase = ({ orderId, value, currency = DEFAULT_CURRENCY, con
       num_items: contents.reduce((s, c) => s + c.quantity, 0),
     },
     userData
-  );
-
+  )
+}
 export const trackSearch = ({ searchString }) =>
   fireEvent('Search', { search_string: searchString });
 

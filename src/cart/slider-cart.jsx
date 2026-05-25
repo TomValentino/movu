@@ -2,6 +2,7 @@
 
 import { formatPrice } from "@/app/(main)/product/[product_handle]/client-page";
 import { cartState } from "@/cart/cart-state";
+import { trackInitiateCheckout } from "@/facebook/fb-client";
 import '@/styles/cart.css'
 import Image from "next/image";
 import Link from "next/link";
@@ -192,9 +193,17 @@ export default function SliderCart({  }) {
           </div>
 
           {/* Checkout CTA */}
-          <Link href="/checkout" className="btn-checkout" >
-            Checkout <ArrowIcon />
-          </Link>
+        <Link 
+  href="/checkout" 
+  className="btn-checkout"
+  onClick={() => trackInitiateCheckout({
+    value: total,
+    contents: items.map(i => ({ id: i.variant.id, quantity: i.qty })),
+    numItems: items.reduce((s, i) => s + i.qty, 0),
+  })}
+>
+  Checkout <ArrowIcon />
+</Link>
 
   
 

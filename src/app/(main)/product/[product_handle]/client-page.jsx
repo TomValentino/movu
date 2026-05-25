@@ -2,6 +2,7 @@
 
 import { cartState } from "@/cart/cart-state";
 import { HomePageProductsClient } from "@/components/home-products";
+import { trackViewContent } from "@/facebook/fb-client";
 import { useState, useRef, useEffect } from "react";
 
 function StarIcon() {
@@ -182,6 +183,16 @@ export default function ProductPage({ product, similarProducts, similarProductCo
       return true;
     })
   );
+
+
+useEffect(() => {
+  if (!product || !selectedVariant) return
+  trackViewContent({
+    value: selectedVariant.price ?? product.price,
+    contentId: selectedVariant.id,
+  })
+}, [selectedVariant?.id])
+
 
   const isSoldOut = selectedVariant ? !selectedVariant.availableForSale : true;
 

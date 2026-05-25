@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import { claimOrder } from '@/shopify/admin'
+import { trackPurchase } from '@/facebook/fb-client'
 
 const fmtRp = (n) => 'Rp\u00a0' + Math.round(parseFloat(n)).toLocaleString('id-ID')
 
@@ -14,19 +15,38 @@ const isPaid = order.displayFinancialStatus === 'PAID'
   const total = order.totalPriceSet.shopMoney.amount
   const addr = order.shippingAddress
 
-  async function handleClaim() {
-    setLoading(true)
-    setErr(null)
-    try {
-      await claimOrder(order.id, order.tags)
-      setClaimed(true)
-    } catch (e) {
-      setErr(e.message)
-    } finally {
-      setLoading(false)
-    }
-  }
+ async function handleClaim() {
+  setLoading(true)
+  setErr(null)
+  try {
+    await claimOrder(order.id, order.tags)
 
+    trackPurchase({
+      orderId: order.name,
+      value: parseFloat(total),
+      contents: order.lineItems.nodes.map(item => ({
+        id: item.variant?.id,
+        quantity: item.quantity,
+      })),
+      userData: {
+        email:     order.email,
+        firstName: addr?.firstName,
+        lastName:  addr?.lastName,
+        phone:     order.phone,
+        city:      addr?.city,
+        zip:       addr?.zip,
+        state:     addr?.province,
+        country:   'id',
+      }
+    })
+
+    setClaimed(true)
+  } catch (e) {
+    setErr(e.message)
+  } finally {
+    setLoading(false)
+  }
+}
   return (
     <>
       <style>{`

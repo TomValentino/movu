@@ -37,7 +37,6 @@ export default function RootLayout({ children }) {
         </div>
 
         <a href={WA_HREF} target="_blank" rel="noopener noreferrer" className="wa-btn" aria-label="Chat with us on WhatsApp">
-          <span className="wa-label">Need help?</span>
           <span className="wa-icon">
             <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.978-1.41A9.962 9.962 0 0 0 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2Z" fill="var(--c-accent)" />

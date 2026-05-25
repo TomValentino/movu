@@ -7,8 +7,8 @@ import Image from "next/image";
 const NAV_LINKS = [
   { label: "Collections", href: "/collection/488234778870" },
   { label: "Shop", href: "/collection/488234778870" },
-  { label: "About", href: "#" },
-  { label: "Stockists", href: "#" },
+  { label: "About", href: "/collection/488234778870" },
+  { label: "Stockists", href: "/collection/488234778870" },
 ];
 
 const MEGA_CATEGORIES = [
@@ -39,8 +39,8 @@ const MEGA_CATEGORIES = [
 ];
 
 const TRUST_LINKS = [
-  { label: "New Arrivals", href: "#" },
-  { label: "Best Sellers", href: "#" },
+  { label: "New Arrivals", href: "/collection/488234778870" },
+  { label: "Best Sellers", href: "/collection/488234778870" },
 ];
 
 export default function SeraNavbar() {
@@ -144,7 +144,7 @@ export default function SeraNavbar() {
               className="sera-mega__ig-btn"
               aria-label="Follow Séra on Instagram"
             >
-              Follow
+              View
             </a>
           </div>
 
