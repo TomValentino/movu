@@ -28,7 +28,7 @@ const styles = `
   --fs-6:    clamp(18px, 14.36px + 0.909vw,  26px);
   --fs-7:    clamp(22px, 15.64px + 1.591vw,  36px);
   --fs-8:    clamp(32px, 19.27px + 3.182vw,  60px);
-  --fs-9:    clamp(48px, 20.36px + 6.818vw, 108px);
+  --fs-9:    clamp(48px, 20.36px + 6.818vw, 82px);
 
   /* ── LETTER SPACINGS ────────────────────────────────────── */
   --ls-1: -0.05em;
@@ -385,7 +385,7 @@ justify-content: center;
   align-items: center;
   overflow: hidden;
   background: var(--dark-500);
-  padding-top: 80px;
+  padding-top: 120px;
 }
 
 .hero::before {
@@ -1394,6 +1394,8 @@ details[open] .faq__chevron { transform: rotate(180deg); }
   .dealer__step-card { flex-direction: column; gap: var(--sp-4); }
   .dealer__step-num { font-size: var(--fs-6); }
 }
+    .hero__title br, .section-title br { display: none; }
+
   `
 const page = () => {
 
