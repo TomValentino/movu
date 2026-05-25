@@ -1,5 +1,5 @@
 'use client'
-import { ProductTile } from "@/app/collection/[collection_id]/client-page"
+import { ProductTile } from "@/app/(main)/collection/[collection_id]/client-page"
 import Link from "next/link"
 import { useRouter, useSearchParams } from "next/navigation"
 import { Suspense, useState } from "react"

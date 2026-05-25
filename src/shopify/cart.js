@@ -27,3 +27,10 @@ export async function createCartAndSetCookie(storeKey) {
   return shopifyCartId
 }
 
+
+
+export async function clearCartCookie(storeKey) {
+  const cookieStore = await cookies()
+  cookieStore.delete(`cart_${storeKey}`)
+}
+ 

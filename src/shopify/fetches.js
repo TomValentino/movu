@@ -333,3 +333,16 @@ export async function removeCartLine(cartId, lineId) {
 
 
 
+
+
+export async function clearShopifyCart(cartId, lineIds) {
+  const { data } = await shopifyRequest(`
+    mutation cartLinesRemove($cartId: ID!, $lineIds: [ID!]!) {
+      cartLinesRemove(cartId: $cartId, lineIds: $lineIds) {
+        cart { id }
+        userErrors { message }
+      }
+    }
+  `, { cartId, lineIds })
+  return data
+}

@@ -2,7 +2,7 @@
 import { Syne, Manrope } from "next/font/google";
 import "@/styles/globals.css";
 import SeraNav from "@/components/nav-bar";
-import { SetupCart } from "../cart/cart-provider";
+import { SetupCart } from "../../cart/cart-provider";
 import SetupFacebookPixel from "@/facebook/fb-client";
 import { Suspense } from "react";
 

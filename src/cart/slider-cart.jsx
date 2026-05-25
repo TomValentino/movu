@@ -1,9 +1,10 @@
 "use client";
 
-import { formatPrice } from "@/app/product/[product_handle]/client-page";
+import { formatPrice } from "@/app/(main)/product/[product_handle]/client-page";
 import { cartState } from "@/cart/cart-state";
 import '@/styles/cart.css'
 import Image from "next/image";
+import Link from "next/link";
 
 
 
@@ -191,9 +192,9 @@ export default function SliderCart({  }) {
           </div>
 
           {/* Checkout CTA */}
-          <button className="btn-checkout">
+          <Link href="/checkout" className="btn-checkout" >
             Checkout <ArrowIcon />
-          </button>
+          </Link>
 
   
 
